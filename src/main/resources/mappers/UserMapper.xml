@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.books.repository.UserMapper">
+    <!--<resultMap id="usersResultMap" type="com.example.books.entity.User">-->
+        <!--<id column="user_id" property="userId" />-->
+        <!--<result column="user_name" property="userName" />-->
+        <!--<result column="user_gender" property="userGender" />-->
+        <!--<result column="user_number" property="userNumber" />-->
+        <!--<result column="account" property="account" />-->
+        <!--<result column="password" property="password" />-->
+        <!--<result column="registered_date" property="registeredDate" />-->
+        <!--<result column="last_login_date" property="lastLoginDate" />-->
+        <!--<result column="late_number" property="lateNumber" />-->
+    <!--</resultMap>-->
+    <insert id="saveUser">
+        insert into users( user_name, user_gender,user_number,account,password,
+          registered_date,last_login_date,late_number)
+        values (#{userName}, #{userGender}, #{userNumber}, #{account},
+          #{password}, #{registeredDate}, #{lastLoginDate},#{lateNumber})
+    </insert>
+    <select id="" resultType="com.example.books.entity.User" parameterType="com.example.books.entity.User">
+        select * from user where username = #{username,jdbcType=VARCHAR} and password = #{password,jdbcType=VARCHAR}
+    </select>
+    <select id="selectUser" >
+        select * from users where user_name=#{userName}
+    </select>
+    <select id="selectAllUser" >
+        select * from users
+    </select>
+    <delete id="deleUser" >
+        delete from users where user_id=#{userId}
+    </delete>
+</mapper>

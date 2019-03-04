@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        <h2>注册成功!!!请<a href="/signIn/login" >登录</a></h2>
+        <!--用户id：<input th:value="${user.userId}" />-->
+        用户姓名：<input th:value="${user.userName}" /><br/>
+        用户性别：<input th:value="${user.userGender}" /><br/>
+        电话号码：<input th:value="${user.userNumber}" /><br/>
+        用户账号：<input th:value="${user.account}" /><br/>
+        用户密码：<input th:value="${user.password}" /><br/>
+
+</body>
+</html>
